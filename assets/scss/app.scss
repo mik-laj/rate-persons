@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+@import 'settings';
+@import 'foundation';
+
+$header-color: $white;
+$header-bg: purple;
+
+header{
+    background: $header-bg;
+}
+
+.header{
+
+    padding: rem-calc(15);
+    &--group {
+        color: white;
+    }
+    &--title{
+        font-size: 3em;
+        color: inherit;
+        &:hover{
+            color: darken($header-color, 10%);
+        }
+    }
+    &--subtitle{
+        font-size: 2em;
+    }
+}
+
+.content{
+    padding: 2em 0;
+}
+.vote-box{
+    &-name{}
+    &-image{
+        border: 1px solid purple;
+    }
+    &-html{}
+    &-link{}
+}
