@@ -16,7 +16,7 @@ class StatsController extends AppController
     public $paginate = [
         'limit' => 24,
         'order' => [
-            'Persons.win_count' => 'asc'
+            'Persons.score' => 'desc'
         ]
     ];
     public function initialize(){

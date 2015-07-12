@@ -46,6 +46,11 @@ class VotesSingleTable extends Table
                 ],
             ]
         ]);
+        $this->addBehavior('ProportionsCache', [
+            'Persons' => [
+                'score' => ['win_count','lose_count']
+            ]
+        ]);
     }
 
     /**
