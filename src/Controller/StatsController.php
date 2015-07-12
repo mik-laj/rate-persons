@@ -42,7 +42,7 @@ class StatsController extends AppController
                 'Categories.name',
                 'Categories.slug',
                 'win_count' => $query->func()->sum('Persons.win_count'),
-                'lost_count' => $query->func()->sum('Persons.lost_count')
+                'lose_count' => $query->func()->sum('Persons.lose_count')
             ])
             ->group('Categories.id')->all()->map(function($row, $key){
                 // var_dump(func_get_args());
@@ -50,7 +50,7 @@ class StatsController extends AppController
                     'name' => $row->category->name,
                     'slug' => $row->category->slug,
                     'win_count' => $row->win_count,
-                    'lost_count' => $row->lost_count
+                    'lose_count' => $row->lost_count
                 ];
             });
         $this->set('categories', $categories);

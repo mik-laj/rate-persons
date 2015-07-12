@@ -41,7 +41,7 @@ class VotesSingleTable extends Table
                 'win_count' => [
                     'conditions' => ['VotesSingle.opinion' => '1']
                 ],
-                'lost_count' => [
+                'lose_count' => [
                     'conditions' => ['VotesSingle.opinion' => '0']
                 ],
             ]

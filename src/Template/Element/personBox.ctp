@@ -13,7 +13,7 @@
         </p>
         <p>
             <span class="person-box--label">Lose:</span>
-            <?= $person->lost_count; ?>
+            <?= $person->lose_count; ?>
         </p>
         <p>
             <span class="person-box--label">Score:</span>

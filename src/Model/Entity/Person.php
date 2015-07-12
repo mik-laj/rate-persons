@@ -25,15 +25,15 @@ class Person extends Entity
         'category' => true,
         'votes_single' => true,
         'win_count' => true,
-        'lost_count' => true,
+        'lose_count' => true,
         'score' => true,
     ];
 
     public function _getScore(){
         $win = $this->_properties['win_count'];
-        $lost = $this->_properties['lost_count'];
-        if($lost ===0)
+        $lose = $this->_properties['lose_count'];
+        if($lose === 0)
             return "0%";
-        return  round(($win / $lost)*100, 2) . "%";
+        return  round(($win / $lose)*100, 2) . "%";
     }
 }
