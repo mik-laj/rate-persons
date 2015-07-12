@@ -116,7 +116,7 @@ $font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, san
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -1404,7 +1404,7 @@ $font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, san
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: rem-calc(45);
+$topbar-height: rem-calc(50);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1484,3 +1484,12 @@ $font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Roboto, Arial, san
 // $include-accessibility-classes: true;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
+
+// 37. Site-header
+
+$site-header-bg: $primary-color ;
+// $site-header-color: $white !default;
+// $site-header-color-link: $site-header-color !default;
+// $site-header-color-link-hover: darken($site-header-color-link, 10%) !default;
+// $site-header-title-font-size: rem-calc(48) !default;
+// $site-header-subtitle-font-size: rem-calc(16) !default;

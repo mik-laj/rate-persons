@@ -1,18 +1,19 @@
-<table>
-    <thead>
-        <th>Person:</th>
-        <th>Win:</th>
-        <th>Lost: </th>
-        <th>Score: </th>
-    </thead>
-    <tbody>
+<?php if($persons): ?>
+    <div class="stats-list" start="<?php echo $this->Paginator->counter('{{start}}'); ?>">
         <?php foreach ($persons as $person ): ?>
-            <tr>
-                <td><?= $person->name; ?></td>
-                <td><?= $person->win_count; ?></td>
-                <td><?= $person->lost_count; ?></td>
-                <td><?= $person->score; ?></td>
-            </tr>
+            <div class="stats-list--item">
+                    <?= $this->element('personBox', ['person' => $person ]); ?>
+            </div>
         <?php endforeach; ?>
-    </tbody>
-</table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+        </ul>
+        <p><?= $this->Paginator->counter() ?></p>
+    </div>
+<?php else: ?>
+    Sorry, no results.
+<?php endif ?>

@@ -74,11 +74,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
 <?= $this->Flash->render() ?>
 <div class="content">
-    <div class="row">
-        <div class="large-12 column">
             <?= $this->fetch('content') ?>
-        </div>
-    </div>
 </div>
 
 <?= $this->Html->script('script.js') ?>

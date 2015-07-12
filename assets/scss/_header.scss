@@ -1,0 +1,27 @@
+$site-header-bg: #06168A !default;
+$site-header-color: $white !default;
+$site-header-color-link: $site-header-color !default;
+$site-header-color-link-hover: darken($site-header-color-link, 10%) !default;
+$site-header-title-font-size: rem-calc(48) !default;
+$site-header-subtitle-font-size: rem-calc(16) !default;
+
+header{
+    background: $site-header-bg;
+}
+
+.site-header{
+    padding: rem-calc(15);
+    &--group {
+        color: $site-header-color;
+    }
+    &--title{
+        font-size: $site-header-title-font-size;
+        color: $site-header-color-link;
+        &:hover{
+            color: $site-header-color-link-hover;
+        }
+    }
+    &--subtitle{
+        font-size: $site-header-subtitle-font-size;
+    }
+}

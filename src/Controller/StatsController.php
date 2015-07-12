@@ -13,9 +13,16 @@ class StatsController extends AppController
     // var $modelClass = "Persons";
     var $components = [];
     var $uses = array();
+    public $paginate = [
+        'limit' => 24,
+        'order' => [
+            'Persons.win_count' => 'asc'
+        ]
+    ];
     public function initialize(){
         $this->modelClass="";
         $this->loadModel("Persons");
+        $this->loadComponent('Paginator');
     }
     /**
      * Index method
@@ -24,7 +31,8 @@ class StatsController extends AppController
      */
     public function index()
     {
-
+        $persons = $this->Persons->find('all', ['contain' => 'Categories']);
+        $this->set('persons', $this->paginate($persons));
     }
 
     public function categories(){
@@ -52,6 +60,6 @@ class StatsController extends AppController
         $persons->matching('Categories', function($q) use($slug){
             return $q->where(['Categories.slug'=> $slug ]);
         });
-        $this->set('persons', $persons);
+        $this->set('persons', $this->paginate($persons));
     }
 }

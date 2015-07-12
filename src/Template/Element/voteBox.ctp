@@ -1,17 +1,21 @@
-<div class="vote-box">
-    <?= $this->Form->create() ?>
-    <h1 class="vote-box-name"><?= $person->name ?></h1>
-    <?= $this->Html->image($person->picture_url, ["class"=>"vote-box-image"]) ?>
-
-    <?php if($person->html): ?>
-        <p class="vote-box-html"><?= $person->html ?> </p>
-    <?php endif; ?>
-
-    <?php if($person->link): ?>
-        <p class="vite-box-link"><?= $this->Html->link( $person->link ,"AAAA") ?> </p>
-    <?php endif; ?>
-
+    <?= $this->Form->create(null, ['action' => 'vote']) ?>
     <?= $this->Form->hidden('selection', ['mame'=>'selection', 'value'=> $selection]) ?>
-    <?= $this->Form->submit('Kochaj', ["class"=>"button vote-box-button"]);?>
-    <?= $this->Form->end() ?>
+<div class="person-box">
+    <div class="person-box--image">
+        <?= $this->Html->image($person->picture_url) ?>
+    </div>
+    <div class="person-box--content">
+        <h3 class="person-box--name">
+            <?= $person->name; ?>
+        </h3>
+        <?php if($person->html): ?>
+            <p><?= $person->html ?> </p>
+        <?php endif; ?>
+
+        <?php if($person->link): ?>
+            <p><?= $this->Html->link( $person->link ,"AAAA") ?> </p>
+        <?php endif; ?>
+    </div>
 </div>
+<?= $this->Form->submit('Kochaj', ["class"=>"button button-vote"]);?>
+<?php $this->Form->end() ?>

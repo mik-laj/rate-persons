@@ -29,39 +29,41 @@ class VoteController extends AppController
     {
         $session = $this->request->session();
         // $this->Flash->error(__(' The vote could not be saved. Please, try again.'));
-        $session->delete('random_persons');
+        $filter = $session->read('filter');
+        $filter = $filter ? $filter : 'all';
         if($session->check('random_persons')){
             $ids = $session->read('random_persons');
             $persons = $this->Persons->find('all', ['condition'=>["id IN"=>$ids]]);
         } else{
-            $filter = $session->read('filter');
             $persons = $this->_getRandom($filter);
             if($persons){
                 $session->write('random_persons', $persons->extract('id')->toArray());
             }
         }
-        $this->set(compact('persons'));
+        $this->set(compact('persons', 'filter'));
 
     }
 
     public function changeSexFilter(){
         if($this->request->is('post')){
-            $filter = $this->request->data('filter');
-            var_dump($filter);
-            var_dump($this->request->data);
-            if(in_array($filter, ['male', 'female', 'all'])){
-                $this->request->session()->write('filter', $filter);
-                $this->request->session()->delete('random_persons');
+            $session = $this->request->session();
 
-                $this->Flash->success(__('The filter has been saved.'));
-            }else{
-                $this->Flash->error(__('The filter hasn\'t been saved.'));
+            $filter = $this->request->data('filter');
+            $old_filter = $session->read('filter');
+            if($old_filter !== $filter){
+                if(in_array($filter, ['male', 'female', 'all'])){
+                    $this->request->session()->write('filter', $filter);
+                    $this->request->session()->delete('random_persons');
+                }else{
+                    $this->Flash->error(__('The filter hasn\'t been saved.'));
+                }
             }
         }
         return $this->redirect(['action' => 'index']);
     }
 
     public function vote(){
+        $session = $this->request->session();
         if ($this->request->is('post') && $session->check('random_persons')) {
             $ids = $session->read('random_persons');
             $persons = $this->Persons->find('all', ['condition'=>["id IN"=>$ids]]);

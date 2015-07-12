@@ -1,5 +1,5 @@
-<div class="alert">
+<div class="alert-box success">
     <div class="row">
-        <div class="alert success"><?= h($message) ?></div>
+        <div class="alert-inner"><?= h($message) ?></div>
     </div>
 </div>

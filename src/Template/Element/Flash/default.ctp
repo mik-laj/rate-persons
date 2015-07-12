@@ -4,8 +4,8 @@ if (!empty($params['class'])) {
     $class .= ' ' . $params['class'];
 }
 ?>
-<div class="alert">
+<div class="alert-box <?= h($class) ?>">
     <div class="row">
-        <div class="<?= h($class) ?>"><?= h($message) ?></div>
+        <div class="alert-inner"><?= h($message) ?></div>
     </div>
 </div>
