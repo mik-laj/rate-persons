@@ -33,7 +33,7 @@ class VoteController extends AppController
         $filter = $filter ? $filter : 'all';
         if($session->check('random_persons')){
             $ids = $session->read('random_persons');
-            $persons = $this->Persons->find('all', ['condition'=>["id IN"=>$ids]]);
+            $persons = $this->Persons->find('all', ['conditions' => ["id IN"=> $ids], 'limit'=>2]);
         } else{
             $persons = $this->_getRandom($filter);
             if($persons){
@@ -66,7 +66,7 @@ class VoteController extends AppController
         $session = $this->request->session();
         if ($this->request->is('post') && $session->check('random_persons')) {
             $ids = $session->read('random_persons');
-            $persons = $this->Persons->find('all', ['condition'=>["id IN"=>$ids]]);
+            $persons = $this->Persons->find('all', ['conditions' => ["id IN"=> $ids], 'limit'=>2]);
 
             $selection = $this->request->param('selection');
 
