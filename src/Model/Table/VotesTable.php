@@ -40,9 +40,6 @@ class VotesTable extends Table
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->allowEmpty('ip');
-
         return $validator;
     }
 
