@@ -23,7 +23,7 @@ $this->layout = 'full-width';
 
     <div class="row">
         <div class="large-12">
-            <h1 class="text-center">Nasz cel</h1>
+            <h1 class="text-center">Nasz cel:</h1>
         </div>
     </div>
     <div class="row">
@@ -45,10 +45,16 @@ $this->layout = 'full-width';
     </div>
 </div>
 <div class="row">
-    <div class="medium-4 column">
+    <div class="medium-3 column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum sapiente harum non vero neque cum ad maxime eligendi inventore, adipisci temporibus ut, iure quos ratione dicta, molestiae saepe ipsa!</p>
     </div>
-    <div class="medium-4 column">
+    <div class="medium-3 column">
+        <p>Fuga distinctio minus aspernatur debitis nam, eligendi optio laboriosam beatae eos. Molestiae nam deleniti est sit dolor nobis earum placeat beatae deserunt, aut impedit nostrum, architecto nisi, magni et dolore?</p>
     </div>
-    <div class="medium-4 column">
+    <div class="medium-3 column">
+        <p>Optio atque error quos neque, ut dignissimos placeat, officia magni temporibus praesentium. Amet omnis ducimus quod consectetur corporis rem eius sit ea, quam, modi, dolor illo quas aliquam atque! Fugit.</p>
+    </div>
+    <div class="medium-3 column">
+        <p>Vel dolorem, nemo inventore non, ad deleniti similique magnam aperiam voluptatum natus atque unde consectetur eveniet reprehenderit labore. Consequatur tempore dolore eius nemo blanditiis, vero magni ad inventore ipsum rem.</p>
     </div>
 </div>
