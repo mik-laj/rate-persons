@@ -31,15 +31,15 @@
         </div>
     </header>
     <?= $this->element('topBar') ?>
-<?= $this->Flash->render() ?>
-<div class="content">
-            <?= $this->fetch('content') ?>
-</div>
+    <?= $this->Flash->render() ?>
+    <div class="content">
+        <?= $this->fetch('content') ?>
+    </div>
 
-<?= $this->Html->script('script.js') ?>
-<script>
-    $(document).foundation();
-</script>
-<?= $this->fetch('script') ?>
+    <?= $this->Html->script('script.js') ?>
+    <script>
+        $(document).foundation();
+    </script>
+    <?= $this->fetch('script') ?>
 </body>
 </html>
