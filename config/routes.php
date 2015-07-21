@@ -70,9 +70,37 @@ Router::scope('/', function ($routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
-    $routes->fallbacks('InflectedRoute');
+    // $routes->fallbacks('InflectedRoute');
+});
+Router::scope('/admin/', function($routes){
+    $routes->connect('/', ['controller' => 'Users', 'action'=>'login']);
+
+    $routes->connect('/users/', ['controller' => 'Users', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+    $routes->connect('/users/:action/*', ['controller' => 'Users'], [ 'routeClass' =>'InflectedRoute']);
+
+    $routes->connect('/votesSingle/', ['controller' => 'VotesSingle', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+    $routes->connect('/votesSingle/:action/*', ['controller' => 'VotesSingle'], [ 'routeClass' =>'InflectedRoute']);
+
+    $routes->connect('/votes/', ['controller' => 'Votes', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+    $routes->connect('/votes/:action/*', ['controller' => 'Votes'], [ 'routeClass' =>'InflectedRoute']);
+
+    $routes->connect('/categories/', ['controller' => 'Categories', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+    $routes->connect('/categories/:action/*', ['controller' => 'Categories'], [ 'routeClass' =>'InflectedRoute']);
+
+    $routes->connect('/persons/', ['controller' => 'Persons', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+    $routes->connect('/persons/:action/*', ['controller' => 'Persons'], [ 'routeClass' =>'InflectedRoute']);
+
 });
 
+Router::connect('/logout', ['controller' => 'Users', 'action'=>'logout']);
+Router::connect('/vote/', ['controller' => 'Vote', 'action' => 'index'], ['routeClass' => 'InflectedRoute']);
+Router::connect('/vote/:action/*', ['controller' => 'Vote'], [ 'routeClass' =>'InflectedRoute']);
+
+Router::scope('/stats', function($routes){
+    $routes->connect('/', ['controller' => 'Stats', 'action' => 'index']);
+    $routes->connect('/categories/', ['controller' => 'Stats', 'action' => 'categories']);
+    $routes->connect('/category/*', ['controller' => 'Stats', 'action' => 'category']);
+});
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.
