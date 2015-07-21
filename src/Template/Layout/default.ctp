@@ -46,7 +46,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <section class="top-bar-section">
                 <ul class="left">
                     <li>
-                        <a href="/"><i class="fa fa-home"></i>Home</a>
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
                         <?= $this->Html->link(
