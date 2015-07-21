@@ -53,7 +53,7 @@ class StatsController extends AppController
                     'name' => $row->category->name,
                     'slug' => $row->category->slug,
                     'win_count' => $row->win_count,
-                    'lose_count' => $row->lost_count
+                    'lose_count' => $row->lose_count
                 ];
             });
         $this->set('categories', $categories);
