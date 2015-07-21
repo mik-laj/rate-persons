@@ -12,12 +12,14 @@ class VoteController extends AppController
 {
 
     public function initialize(){
+        parent::initialize();
         $this->loadModel('VotesSingle');
         $this->loadModel('Persons');
         $this->loadModel('Votes');
         $this->loadModel('Categories');
         $this->loadComponent('Csrf');
         $this->loadComponent('Flash');
+        $this->Auth->allow();
     }
 
     /**

@@ -1,6 +1,3 @@
-<?php
-$cakeDescription = 'CakePHP: the rapid development php framework';
-?>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
@@ -9,7 +6,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
 
@@ -34,44 +30,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </div>
         </div>
     </header>
-    <div class="contain-to-grid sticky">
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <li class="name">
-                    <h1 class="show-for-small-only"><a href="#">Rate persons</a></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-            </ul>
-
-            <section class="top-bar-section">
-                <ul class="left">
-                    <li>
-                        <a href="/"><i class="fa fa-home"></i>Home</a>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(
-                            '<i class="fa fa-check-square-o"></i> '.__('Vote'),
-                            ['controller' => 'Vote'],
-                            ['escape' => false])
-                        ?>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(
-                            '<i class="fa fa-users"></i> '.__('Persons'),
-                            ['controller' => 'Stats', 'action'=>'index'],
-                            ['escape' => false])
-                        ?>
-                    </li>
-                    <li>
-                        <?= $this->Html->link(
-                            '<i class="fa fa-pie-chart"></i> '.__('Categories'),
-                            ['controller' => 'Stats', 'action'=>'categories'],
-                            ['escape' => false]) ?>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </div>
+    <?= $this->element('topBar') ?>
 <?= $this->Flash->render() ?>
 <div class="content">
             <?= $this->fetch('content') ?>

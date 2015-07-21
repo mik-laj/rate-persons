@@ -20,9 +20,12 @@ class StatsController extends AppController
         ]
     ];
     public function initialize(){
+        parent::initialize();
         $this->modelClass="";
         $this->loadModel("Persons");
         $this->loadComponent('Paginator');
+
+        $this->Auth->allow();
     }
     /**
      * Index method
