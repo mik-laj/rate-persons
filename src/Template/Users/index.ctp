@@ -23,9 +23,18 @@
             <td><?= h($user->created) ?></td>
             <td><?= h($user->modified) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-eye" title="'.__('View').'"></i>',
+                    ['action' => 'view', $user->id],
+                    ["escape" => false]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-pencil" title="'.__('Edit').'"></i>',
+                    ['action' => 'edit', $user->id],
+                    ["escape" => false]) ?>
+                <?= $this->Form->postLink(
+                    '<i class="fa fa-trash-o" title="'.__('Delete').'"></i>',
+                    ['action' => 'delete', $user->id],
+                    ['confirm' => __('Are you sure you want to delete # {0}?', $user->id), "escape" => false]) ?>
             </td>
         </tr>
 

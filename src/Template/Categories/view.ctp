@@ -52,11 +52,22 @@
             <td><?= h($persons->category_id) ?></td>
 
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['controller' => 'Persons', 'action' => 'view', $persons->id]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-eye" title="'.__('View').'"></i>',
+                    ['controller' => 'Persons', 'action' => 'view', $persons->id],
+                    ["escape" => false]
+                ) ?>
 
-                <?= $this->Html->link(__('Edit'), ['controller' => 'Persons', 'action' => 'edit', $persons->id]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-pencil" title="'.__('Edit').'"></i>',
+                    ['controller' => 'Persons', 'action' => 'edit', $persons->id],
+                    ["escape" => false])
+                ?>
 
-                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Persons', 'action' => 'delete', $persons->id], ['confirm' => __('Are you sure you want to delete # {0}?', $persons->id)]) ?>
+                <?= $this->Form->postLink(
+                    '<i class="fa fa-trash-o" title="'.__('Delete').'"></i>',
+                    ['controller' => 'Persons', 'action' => 'delete', $persons->id],
+                    ['confirm' => __('Are you sure you want to delete # {0}?', $persons->id), "escape" => false]) ?>
 
             </td>
         </tr>

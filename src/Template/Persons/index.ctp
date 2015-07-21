@@ -35,9 +35,22 @@
                 <?= $person->has('category') ? $this->Html->link($person->category->name, ['controller' => 'Categories', 'action' => 'view', $person->category->id]) : '' ?>
             </td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $person->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $person->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $person->id], ['confirm' => __('Are you sure you want to delete # {0}?', $person->id)]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-eye" title="'.__('View').'"></i>',
+                    ['action' => 'view', $person->id],
+                    ["escape" => false])
+                ?>
+                <?=
+                    $this->Html->link(
+                    '<i class="fa fa-pencil" title="'.__('Edit').'"></i>',
+                    ['action' => 'edit', $person->id],
+                    ["escape" => false])
+                ?>
+                <?= $this->Form->postLink(
+                    '<i class="fa fa-trash-o" title="'.__('Delete').'"></i>',
+                    ['action' => 'delete', $person->id],
+                    ['confirm' => __('Are you sure you want to delete # {0}?', $person->id), "escape" => false])
+                ?>
             </td>
         </tr>
 

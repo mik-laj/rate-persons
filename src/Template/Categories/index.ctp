@@ -23,9 +23,18 @@
             <td><?= h($category->name) ?></td>
             <td><?= h($category->slug) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $category->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $category->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $category->id], ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-eye" title="'.__('View').'"></i>',
+                    ['action' => 'view', $category->id],
+                    ['escape' => false]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-pencil" title="'.__('Edit').'"></i>',
+                    ['action' => 'edit', $category->id],
+                    ['escape' => false]) ?>
+                <?= $this->Form->postLink(
+                    '<i class="fa fa-trash-o" title="'.__('Delete').'"></i>',
+                    ['action' => 'delete', $category->id],
+                    ['confirm' => __('Are you sure you want to delete # {0}?', $category->id), 'escape' => false]) ?>
             </td>
         </tr>
 

@@ -21,9 +21,21 @@
             <td><?= h($vote->created) ?></td>
             <td><?= h($vote->ip) ?></td>
             <td class="actions">
-                <?= $this->Html->link(__('View'), ['action' => 'view', $vote->id]) ?>
-                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $vote->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $vote->id], ['confirm' => __('Are you sure you want to delete # {0}?', $vote->id)]) ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-eye" title="'.__('View').'"></i>',
+                    ['action' => 'view', $vote->id],
+                    ["escape" => false])
+                ?>
+                <?= $this->Html->link(
+                    '<i class="fa fa-pencil" title="'.__('Edit').'"></i>',
+                    ['action' => 'edit', $vote->id],
+                    ["escape" => false])
+                ?>
+                <?= $this->Form->postLink(
+                    '<i class="fa fa-trash-o" title="'.__('Delete').'"></i>',
+                    ['action' => 'delete', $vote->id],
+                    ['confirm' => __('Are you sure you want to delete # {0}?', $vote->id), "escape" => false])
+                ?>
             </td>
         </tr>
 
