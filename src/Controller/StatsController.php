@@ -23,6 +23,7 @@ class StatsController extends AppController
         parent::initialize();
         $this->modelClass="";
         $this->loadModel("Persons");
+        $this->loadModel("Categories");
         $this->loadComponent('Paginator');
 
         $this->Auth->allow();
@@ -39,23 +40,7 @@ class StatsController extends AppController
     }
 
     public function categories(){
-        $query = $this->Persons->find('all', ['contain' => 'Categories']);
-        $categories = $query->select(
-            [
-                'Categories.name',
-                'Categories.slug',
-                'win_count' => $query->func()->sum('Persons.win_count'),
-                'lose_count' => $query->func()->sum('Persons.lose_count')
-            ])
-            ->group('Categories.id')->all()->map(function($row, $key){
-                // var_dump(func_get_args());
-                return [
-                    'name' => $row->category->name,
-                    'slug' => $row->category->slug,
-                    'win_count' => $row->win_count,
-                    'lose_count' => $row->lose_count
-                ];
-            });
+        $categories = $this->Categories->find('summary');
         $this->set('categories', $categories);
     }
     public function category($slug){

@@ -42,15 +42,25 @@ class CategoriesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
-            
+
         $validator
             ->requirePresence('name', 'create')
             ->notEmpty('name');
-            
+
         $validator
             ->requirePresence('slug', 'create')
             ->notEmpty('slug');
 
         return $validator;
+    }
+
+    public function findSummary(Query $query, array $options){
+        return $query->select(
+            [
+                'Categories.name',
+                'Categories.slug',
+                'win_count' => $query->func()->sum('Persons.win_count'),
+                'lose_count' => $query->func()->sum('Persons.lose_count')
+            ])->group('Categories.id')->matching('Persons')->all();
     }
 }
