@@ -12,6 +12,7 @@
                     <li>
                         <a href="/"><i class="fa fa-home"></i> Home</a>
                     </li>
+                    <li class="divider"></li>
                     <li>
                         <?= $this->Html->link(
                             '<i class="fa fa-check-square-o"></i> '.__('Vote'),
@@ -19,6 +20,7 @@
                             ['escape' => false])
                         ?>
                     </li>
+                    <li class="divider"></li>
                     <li>
                         <?= $this->Html->link(
                             '<i class="fa fa-users"></i> '.__('Persons'),
