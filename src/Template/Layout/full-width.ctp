@@ -24,8 +24,8 @@
         <div class="row">
             <div class="site-header">
                 <div class="site-header--group">
-                    <a href="/" class="site-header--title">Rate persons</a>
-                    <p class="site-header--subtitle">You also assess the apparitiond of other people..</p>
+                    <a href="/" class="site-header--title"><?= __('Rate persons') ?></a>
+                    <p class="site-header--subtitle"><?= __('You also assess the apparitiond of other people..') ?></p>
                 </div>
             </div>
         </div>

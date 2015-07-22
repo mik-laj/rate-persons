@@ -13,9 +13,9 @@
         <?php endif; ?>
 
         <?php if($person->link): ?>
-            <p><?= $this->Html->link( $person->link ,"AAAA") ?> </p>
+            <p><?= $this->Html->link( $person->link ,__('Read more')) ?> </p>
         <?php endif; ?>
     </div>
 </div>
-<?= $this->Form->submit('Kochaj', ["class"=>"button button-vote"]);?>
+<?= $this->Form->submit(__('Vote'), ["class"=>"button button-vote"]);?>
 <?php $this->Form->end() ?>

@@ -8,15 +8,15 @@
             <?= $person->name; ?>
         </h3>
         <p>
-            <span class="person-box--label">Win:</span>
+            <span class="person-box--label"><?= __('Win:') ?></span>
             <?= $person->win_count; ?>
         </p>
         <p>
-            <span class="person-box--label">Lose:</span>
+            <span class="person-box--label"><?= __('Lose:') ?></span>
             <?= $person->lose_count; ?>
         </p>
         <p>
-            <span class="person-box--label">Score:</span>
+            <span class="person-box--label"><?= __('Score:') ?></span>
             <?= $person->score; ?>
         </p>
         <p>
