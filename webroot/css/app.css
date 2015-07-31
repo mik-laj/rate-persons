@@ -10270,6 +10270,16 @@ header {
   font-size: 1rem;
 }
 
+.section {
+  padding: 30px 0;
+}
+.section-top {
+  padding-top: 0;
+}
+.section-middle {
+  background: #EEE;
+}
+
 .content {
   padding: 2em 0;
 }
